@@ -47,7 +47,7 @@ export default function BasicCard(props:Props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <div size="small" style={{color:"red"}} onClick={()=>{
+                <div style={{color:"red"}} onClick={()=>{
                     dispatch(deleteBookfromState(book))
                 }}>Delete</div>
             </CardActions>
