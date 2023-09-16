@@ -15,11 +15,11 @@ export default function PopUpEditDialog(props:Props) {
     const book = props.book
     const [open, setOpen] = React.useState(false);
     const [formData,setFormData] = React.useState({
-        id:book.id,
-        name:book.name,
-        price: book.price,
-        category:book.category,
-        description:book.description
+        id:!!book.id?book.id:"no id",
+        name:!!book.name?book.name:"no name",
+        price: !!book.price?book.price:"no price",
+        category:!!book.category?book.category:"no category",
+        description:!!book.description?book.description:"no description"
     });
     const dispatch = useDispatch();
     const handleClickOpen = () => {
@@ -108,6 +108,13 @@ export default function PopUpEditDialog(props:Props) {
                     <Button onClick={handleClose}>Cancel</Button>
                     <Button onClick={()=>{
                         dispatch(updateBookToState(formData))
+                        setFormData({
+                            id:!!book.id?book.id:"no id",
+                            name:!!book.name?book.name:"no name",
+                            price: !!book.price?book.price:"no price",
+                            category:!!book.category?book.category:"no category",
+                            description:!!book.description?book.description:"no description"
+                        })
                         handleClose()
                     }}>Add</Button>
                 </DialogActions>
