@@ -63,7 +63,7 @@ export default function Home() {
                 </div>{
                 (alart && msg.msg !== "")&&
                 <div style={{position:"fixed", right:"10px",top:"10px"}}>
-                    <Alert severity={msg.severity}>{msg.msg}</Alert>
+                    <Alert severity={msg.severity === "success" ? "success" : msg.severity == "error" ? "error" : "info"}>{msg.msg}</Alert>
                 </div>}
                 {
                     (booksState.length === 0) &&
