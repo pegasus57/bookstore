@@ -74,6 +74,10 @@ export const booksSlice = createSlice({
         deleteBookfromState(state, action) {
             const result = state.booksState.filter((book) => book.id !== action.payload.id);
             state.booksState = [...result]
+            state.message ={
+                msg:"the book is deleted successfully",
+                severity:"success"
+            }
         },
 
 
