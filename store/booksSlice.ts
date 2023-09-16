@@ -50,7 +50,7 @@ export const booksSlice = createSlice({
         updateBookToState(state, action) {
             if (!/^(\d*([.,](?=\d{3}))?\d+)+((?!\2)[.,]\d\d)?$/.test(action.payload.price)){
                 state.message ={
-                    msg:"price is invalid, please double check",
+                    msg:"the price is invalid, please double check",
                     severity:"error"
                 }
             }else{
