@@ -3,7 +3,7 @@ import { AppState } from "./store";
 import { HYDRATE } from "next-redux-wrapper";
 // Type for our state
 export interface BooksState {
-    booksState: [];
+    booksState: any[];
     message:{
         msg:"",
         severity:"info"
