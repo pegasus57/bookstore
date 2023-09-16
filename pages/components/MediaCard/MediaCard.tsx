@@ -19,9 +19,19 @@ const bull = (
     </Box>
 );
 
+interface CurrentBook {
+    name: string,
+    category: string,
+    price: string,
+    description: string
+}
 
-export default function BasicCard(props:Props) {
-    const book = props.book
+export default function BasicCard(props: Props) {
+    const book: CurrentBook
+    book.name = props.book.name,
+    book.category == props.book.category,
+    book.price == props.book.price,
+    book.description == props.book.description
     const dispatch = useDispatch()
     return (
         <Card sx={{minWidth: 175}}>
@@ -33,23 +43,24 @@ export default function BasicCard(props:Props) {
                     image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
                 />
                 <Typography variant="h5" component="div">
-                    {!!book.name?book.name:"no name"}
+                    {book.name}
                 </Typography>
                 <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
-                    {!!book.category?book.category:"no category "}
+                    {book.category}
                 </Typography>
                 <Typography sx={{mb: 1.5}} color="text.secondary">
-                    ${!!book.price?book.price: "no price"}
+                    ${book.price}
                 </Typography>
                 <Typography variant="body2">
-                    {!!book.description?book.description:"no description"}
+                    {book.description}
                     <br/>
                 </Typography>
             </CardContent>
             <CardActions>
-                <div style={{color:"red"}} onClick={()=>{
+                <div style={{color: "red"}} onClick={() => {
                     dispatch(deleteBookfromState(book))
-                }}>Delete</div>
+                }}>Delete
+                </div>
             </CardActions>
 
         </Card>
@@ -57,9 +68,10 @@ export default function BasicCard(props:Props) {
 }
 
 interface Props {
-    book: {name:string,
-        category:string,
-        price:string,
-        description:string
+    book: {
+        name: string,
+        category: string,
+        price: string,
+        description: string
     }
 }
