@@ -56,7 +56,7 @@ export default function PopUpCreateDialog() {
                             margin="dense"
                             id="price"
                             label="Price"
-                            type="number" step="any"
+                            type="number"
                             InputProps={{
                                 startAdornment: <InputAdornment position="start">$</InputAdornment>,
                             }}
