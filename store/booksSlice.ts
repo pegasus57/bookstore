@@ -5,8 +5,8 @@ import { HYDRATE } from "next-redux-wrapper";
 export interface BooksState {
     booksState: any[];
     message:{
-        msg:"",
-        severity:"info"
+        msg:string,
+        severity:string
     }
 }
 
