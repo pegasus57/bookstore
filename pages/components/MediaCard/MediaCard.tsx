@@ -19,19 +19,9 @@ const bull = (
     </Box>
 );
 
-interface CurrentBook {
-    name: string,
-    category: string,
-    price: string,
-    description: string
-}
 
-export default function BasicCard(props: Props) {
-    const book: CurrentBook
-    book.name = props.book.name,
-    book.category == props.book.category,
-    book.price == props.book.price,
-    book.description == props.book.description
+export default function BasicCard(props:Props) {
+    const book = props.book
     const dispatch = useDispatch()
     return (
         <Card sx={{minWidth: 175}}>
@@ -57,10 +47,9 @@ export default function BasicCard(props: Props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <div style={{color: "red"}} onClick={() => {
+                <div style={{color:"red"}} onClick={()=>{
                     dispatch(deleteBookfromState(book))
-                }}>Delete
-                </div>
+                }}>Delete</div>
             </CardActions>
 
         </Card>
@@ -68,10 +57,9 @@ export default function BasicCard(props: Props) {
 }
 
 interface Props {
-    book: {
-        name: string,
-        category: string,
-        price: string,
-        description: string
+    book: {name:string,
+        category:string,
+        price:string,
+        description:string
     }
 }

@@ -10,25 +10,14 @@ import {useDispatch} from "react-redux";
 import {createBookToState, updateBookToState} from "@/store/booksSlice";
 import {InputAdornment} from "@mui/material";
 import BasicCard from "@/pages/components/MediaCard/MediaCard";
-interface CurrentBook {
-    id:string,
-    name: string,
-    category: string,
-    price: string,
-    description: string
-}
+
 export default function PopUpEditDialog(props:Props) {
-    const book: CurrentBook
-    book.id = props.book.id
-    book.name = props.book.name,
-    book.category == props.book.category,
-    book.price == props.book.price,
-    book.description == props.book.description
+    const book = props.book
     const [open, setOpen] = React.useState(false);
     const [formData,setFormData] = React.useState({
         id:book.id,
         name:book.name,
-        price:book.price,
+        price: book.price,
         category:book.category,
         description:book.description
     });
@@ -119,13 +108,6 @@ export default function PopUpEditDialog(props:Props) {
                     <Button onClick={handleClose}>Cancel</Button>
                     <Button onClick={()=>{
                         dispatch(updateBookToState(formData))
-                        setFormData({
-                            id:book.id,
-                            name:book.name,
-                            price:book.price,
-                            category:book.category,
-                            description:book.description
-                        })
                         handleClose()
                     }}>Add</Button>
                 </DialogActions>
