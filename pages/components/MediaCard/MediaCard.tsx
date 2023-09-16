@@ -33,16 +33,16 @@ export default function BasicCard(props:Props) {
                     image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
                 />
                 <Typography variant="h5" component="div">
-                    {book.name}
+                    {!!book.name?book.name:"no name"}
                 </Typography>
                 <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
-                    {book.category}
+                    {!!book.category?book.category:"no category "}
                 </Typography>
                 <Typography sx={{mb: 1.5}} color="text.secondary">
-                    ${book.price}
+                    ${!!book.price?book.price: "no price"}
                 </Typography>
                 <Typography variant="body2">
-                    {book.description}
+                    {!!book.description?book.description:"no description"}
                     <br/>
                 </Typography>
             </CardContent>
