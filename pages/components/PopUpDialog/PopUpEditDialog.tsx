@@ -11,7 +11,7 @@ import {createBookToState, updateBookToState} from "@/store/booksSlice";
 import {InputAdornment} from "@mui/material";
 import BasicCard from "@/pages/components/MediaCard/MediaCard";
 
-export default function PopUpEditDialog(props) {
+export default function PopUpEditDialog(props:Props) {
     const book = props.book
     const [open, setOpen] = React.useState(false);
     const [formData,setFormData] = React.useState({
@@ -114,6 +114,16 @@ export default function PopUpEditDialog(props) {
             </Dialog>
         </div>
     );
+}
+
+interface Props {
+    book: {
+        id:string
+        name:string,
+        category:string,
+        price:string,
+        description:string
+    }
 }
 
 

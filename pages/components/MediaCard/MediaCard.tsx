@@ -19,7 +19,8 @@ const bull = (
     </Box>
 );
 
-export default function BasicCard(props) {
+
+export default function BasicCard(props:Props) {
     const book = props.book
     const dispatch = useDispatch()
     return (
@@ -53,4 +54,12 @@ export default function BasicCard(props) {
 
         </Card>
     );
+}
+
+interface Props {
+    book: {name:string,
+        category:string,
+        price:string,
+        description:string
+    }
 }
