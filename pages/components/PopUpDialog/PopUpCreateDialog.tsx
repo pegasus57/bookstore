@@ -9,9 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import {useDispatch} from "react-redux";
 import {createBookToState} from "@/store/booksSlice";
 import {InputAdornment} from "@mui/material";
-import {useRef} from "react";
 export default function PopUpCreateDialog() {
-    const priceField = useRef()
     const [open, setOpen] = React.useState(false);
     const [formData,setFormData] = React.useState({
         name:"",
@@ -55,7 +53,6 @@ export default function PopUpCreateDialog() {
                         />
 
                         <TextField
-                            ref={priceField}
                             margin="dense"
                             id="price"
                             label="Price"
